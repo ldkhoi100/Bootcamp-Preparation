@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ds = +prompt('doanh số bán hàng nhận được: ' + "\n" + 'biết rằng');
+        if (ds>1000000 && ds<=2000000)
+        {
+            hoahong =ds *0.1;
+            tt = hoahong + ds;
+            alert('hoa hồng nhận được 10%: ' + hoahong + ',tổng số tiền nhận được: ' + tt);
+        }
+        else if(ds>2000000 && ds<=3000000)
+        {
+            hoahong =ds *0.2;
+            tt = hoahong + ds;
+            alert('hoa hồng nhận được 20%: ' + hoahong + ',tổng số tiền nhận được: ' + tt);
+        }
+        else if(ds>3000000)
+        {
+            hoahong =ds *0.4;
+            tt = hoahong + ds;
+            alert('hoa hồng nhận được 40%: ' + hoahong + ',tổng số tiền nhận được: ' + tt);
+        }
+        else
+            alert('Không nhận được hoa hồng');
+    </script>
+</body>
+</html>

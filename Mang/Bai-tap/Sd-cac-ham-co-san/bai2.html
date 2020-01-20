@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = prompt("nhập số: ");    //nhập số kiểu string
+        let str = num.toString();         //hàm toString() chuyển cái nhập vào thành 1 chuỗi (trong th này mảng với các phần tử là chữ số)
+        let arr = [str[0]];               // chỗ này tạo mảng mới tên arr với 1 phần tử là chữ số đầu tiên
+        for(let i=1;i<str.length;i++){
+            if(str[i-1]%2===0 && str[i]%2===0){ //kiểm tra 2 chữ số cạnh nhau
+                arr.push('-',str[i]);   //đúng thì thêm - vào arr và thêm chữ số tiếp theo 
+            }
+            else{
+                arr.push(str[i]);       //sai thì thêm chữ số tiếp theo
+            }
+        }
+        document.write(arr.join(""));   //.join"" gộp cái chuỗi kia vào thành 1 số 
+    </script>
+</body>
+</html>

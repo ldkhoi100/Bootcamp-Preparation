@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function chuvi(bk){
+        let pi = 3.14;
+        return bk*2*3.14;
+    }
+
+    function dientich(bk1){
+        return bk1*bk1*3.14;
+    }
+
+    function input(){
+        
+        do{
+        nhapvao = +prompt("Nhập bán kính");
+        }while(isNaN(nhapvao) || nhapvao==' ' || nhapvao<0);
+        return nhapvao;
+    }
+
+    function main(){
+        let a = input();
+        let cv = chuvi(a);
+        let dt = dientich(a);
+        document.write(cv + '<br/>' + dt);
+    }
+    main();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input onclick="game()" style="position: relative; left: 300px; top: 300px;" type="button" value="Chơi">
+    <script>
+    function game(){
+    let khoangmin = parseInt(prompt('Bạn muốn đoán số trong khoảng nào? Nhập số nhỏ nhất'));
+    let khoangmax = parseInt(prompt('Nhập số lớn'));
+    let a;
+    a = taosongaunhien(khoangmin, khoangmax);
+    
+    function taosongaunhien(min, max){
+        let b;
+        b = Math.floor(Math.random() * (max - min + 1)) + min;
+        document.write(b);
+    }
+    }
+    </script>
+</body>
+</html>

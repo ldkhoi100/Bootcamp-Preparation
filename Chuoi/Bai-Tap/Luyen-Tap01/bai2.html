@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bai 2 | [*Bài tập] Luyện tập sử dụng biểu thức chính quy</title>
+</head>
+
+<body>
+    <input type="text" id="numberValue">
+    <input type="button" value="Test" id="test"> <br>
+    <br>
+    Số từ là: <span id="result"></span>
+</body>
+<script>
+    function checknumber(str){
+        return str.trim().split(/\s+/).length;
+    }
+    let value;
+    let numberValue = document.getElementById("numberValue");
+    let result = document.getElementById("result");
+    document.getElementById("test").onclick = function() {
+        value = numberValue.value;
+        result.innerHTML = checknumber(value);
+    }
+</script>
+
+</html>

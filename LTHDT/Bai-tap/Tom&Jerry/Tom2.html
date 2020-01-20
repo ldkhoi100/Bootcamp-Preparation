@@ -1,0 +1,104 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Rat {
+            constructor(name, weight, speed, status) {
+                this.name = name;
+                this.weight = weight;
+                this.speed = speed;
+                this.status = status;
+            }
+            makeSomeNoise() {
+                console.log("chít chít");
+            }
+        }
+        class Cat {
+            constructor(name, weight, speed) {
+                this.name = name;
+                this.weight = weight;
+                this.speed = speed;
+                this.maxSpeed = 50;
+                this.stamina = 100;
+                this.stomach = [];
+            }
+            makeSomeCute() {
+                console.log("Meo Meo");
+            }
+            massacre(obj) {
+                console.log("No Mercy");
+                if (Math.random() > 0.5) {
+                    obj.status = false;
+                } else {
+                    obj.status = true;
+                }
+            }
+            eat(obj) {
+                if (obj.status === true) {
+                    this.stomach.push(obj.name);
+                    this.weight += obj.weight;
+                    console.log(this.stomach);
+                    console.log(this.name + " get a good meat");
+                } else {
+                    console.log(obj.name + " has been slain, Game Over");
+                }
+            }
+            furyMode() {
+                if (Math.random() * 5 < 1) {
+                    console.log(this.name + " has been activated Fury mode");
+                    this.speed = this.maxSpeed;
+                    console.log(this.name + " speed " + this.speed);
+                    this.stamina -= 50;
+                    console.log("stamina: " + this.stamina);
+                }
+            }
+            speedUp() {
+                this.speed += Math.floor(Math.random() * 6);
+            }
+        }
+        var jerry = new Rat("Jerry", 10, 30, true);
+        var tom = new Cat("Tom", 50, 10);
+        function gameStart() {
+            console.log(jerry.name + " run or dead");
+            setTimeout(() => {
+                console.log(jerry.name + " has started running");
+            }, 2000);
+            setTimeout(() => {
+                tom.makeSomeCute();
+                console.log(tom.name + " join the  hunting game");
+            }, 3000);
+            let count = 0;
+            var start = setInterval(function() {
+                console.log("Round " + count);
+                jerry.makeSomeNoise();
+                tom.furyMode(); // tom bước vào trạng thái cuồng nộ (rate khá khó trúng)
+                console.log(tom.name + " speed " + tom.speed);
+                console.log(jerry.name + " speed " + jerry.speed);
+                if (tom.speed >= jerry.speed) {
+                    tom.massacre(jerry);
+                    tom.eat(jerry);
+                    clearInterval(start);
+                }
+                tom.speedUp();
+                if (count === 5) {
+                    clearInterval(start);
+                } else {
+                    count++;
+                }
+            }, 5000);
+        }
+        gameStart();
+        //tom.furyMode();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function doiso(a,b){
+        let temp = a;
+        a = b;
+        b = temp;
+        document.write("đổi chỗ số thứ nhất là: " + a + ",số thứ hai là: " + b);
+    }
+
+    let num1 = prompt("Nhập số thứ nhất");
+    let num2 = prompt("Nhập số thứ hai");
+    doiso(num1,num2);
+    </script>
+</body>
+</html>

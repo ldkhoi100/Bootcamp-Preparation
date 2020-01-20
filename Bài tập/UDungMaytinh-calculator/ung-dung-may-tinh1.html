@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Caculator</h2> <br>
+
+    <form>
+        Số a: <input type="text" id="textAmount">
+        <br><br>
+        Số b: <input type="text" id="textAmount2">
+        <br><br> 
+    </form>
+
+    <button style="background-color: red;" type="button" onclick="a1()">Addition(+)</button>
+    <button type="button" onclick="a2()">Addition(-)</button>
+    <button type="button" onclick="a3()">Addition(*)</button>
+    <button type="button" onclick="a4()">Addition(/)</button>
+    <div id="demo"></div>
+    <script>
+            function a1(){
+            let a = parseInt(document.getElementById("textAmount").value);
+            let b = parseInt(document.getElementById("textAmount2").value);
+            ketqua = a + b;
+            document.getElementById("demo").innerHTML = ketqua;
+            }
+
+            function a2(){
+            let a = parseInt(document.getElementById("textAmount").value);
+            let b = parseInt(document.getElementById("textAmount2").value);
+            ketqua2 = a - b;
+            document.getElementById("demo").innerHTML = ketqua2;
+            }
+
+            function a3(){
+            let a = +document.getElementById("textAmount").value;
+            let b = +document.getElementById("textAmount2").value;
+            ketqua3 = a * b;
+            document.getElementById("demo").innerHTML = ketqua3;
+            }
+
+            function a4(){
+            let a = parseInt(document.getElementById("textAmount").value);
+            let b = parseInt(document.getElementById("textAmount2").value);
+            ketqua4 = a / b;
+            document.getElementById("demo").innerHTML = ketqua4;
+            }            
+        </script> <br>
+
+
+
+    
+</body>
+</html>

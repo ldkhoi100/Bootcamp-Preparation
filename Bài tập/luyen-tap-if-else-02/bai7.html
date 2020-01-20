@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>Nhập số a:</pre>
+    <input type="number" placeholder="số a" id="a" /> <br />
+    <pre>Nhập số b:</pre>
+    <input type="number" placeholder="số b" id="b" /> <br />
+    <pre>Nhập số c:</pre>
+    <input type="number" placeholder="số c" id="c" /> <br />
+
+    <br />
+    <pre><input type="button" value="giá trị x" onclick="feet()" /></pre>
+    <div id="show"></div>
+    <script>
+      function feet() {
+        let a = +document.getElementById("a").value;
+        let b = +document.getElementById("b").value;
+        let c = +document.getElementById("c").value;
+        let delta = b**2 - 4*a*c;
+        let x1;
+        let x2;
+        if (delta<0)
+            document.getElementById('show').innerHTML='Phương trình ' + a + 'x^2 +' + b + 'x ' + c + ' vô nghiệm';
+        else if (delta==0){
+            x1 = -b/(2*a);
+            document.getElementById('show').innerHTML='Phương trình ' + a + 'x^2 +' + b + 'x ' + c + ' có nghiệm x1 = x2 = ' + x1;
+        }
+        else{
+            x1 = (-b+Math.sqrt(delta))/2*a;
+            x2 = (-b-Math.sqrt(delta))/2*a;
+            document.getElementById('show').innerHTML='Phương trình ' + a + 'x^2 +' + b + 'x ' + c + ' có 2 nghiệm x1= ' + x1.toFixed(3) + ' và x2= '+x2.toFixed(3);
+      }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bai3 | [*Bài tập] Luyện tập sử dụng biểu thức chính quy</title>
+</head>
+
+<body>
+    <input type="text" id="value">
+    <input type="button" value="Test" id="test"> <br>
+    <br>
+    <span>Nguyên âm: </span><span id="nguyenam"></span>
+    <span>Phụ âm: </span><span id="phuam"></span>
+</body>
+<script>
+    function languyenam(str) {
+        regexp = /^[aeioyu]$/i;
+        if (regexp.test(str)) {
+            return true;
+        }
+        return false;
+    }
+    document.getElementById("test").onclick = function() {
+        let songuyenam = 0;
+        let sophuam = 0;
+        let value = document.getElementById("value").value;
+        for (let i = 0; i < value.length; i++) {
+            if (languyenam(value[i]))
+                songuyenam++;
+            else sophuam++;
+        }
+        document.getElementById("nguyenam").innerHTML = songuyenam;
+        document.getElementById("phuam").innerHTML = sophuam;
+    }
+</script>
+</html>

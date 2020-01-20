@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+    <!-- <div class="phone">
+       <div class="content" id="iphoneScreen">
+           <div id="maxEnergy">
+               <div id="iphoneEnergy">Battery</div>
+           </div>
+           <table><tr>
+               <td><button onclick="iphone.showMess();">Message</button></td>
+                   <div class="modal" id="iphoneMessage">
+                       <span class="close" onclick='this.parentElement.style.display = "none"'>&times;</span>
+                       <button onclick="iphone.showSent()">Thư đã gửi</button>
+                       <button onclick="iphone.writeScript()">Soạn tin nhắn</button>
+                       <div class="modal" id="iphoneScript">
+                           <span class="close" onclick='this.parentElement.style.display = "none"'>&times;</span>
+                           <p>Tin nhắn nháp <br><br>
+                           To : Nokia <br>
+                           </p>
+                           <textarea id='iphoneInput' style="height: 300px"></textarea>
+                           <button onclick="iphone.sendMess();">Gửi thư</button>
+                       </div>
+                       <p>Message from Nokia :</p>
+                       <p id='iphoneMess'></p>
+                   </div>
+               <td><button onclick="iphone.turnOnOff()">Turn on/off</button></td>
+               <td><button onclick="iphone.charge()">Charge energy</button></td>
+               <td><button onclick="iphone.checkStatus()">Status</button></td>
+                   <div class="modal" id="iphoneNofi">
+                           <span class="close" onclick='this.parentElement.style.display = "none"'>&times;</span>
+                           <h2 id='iphoneNofication'></h2>
+                   </div>
+           </table></tr>
+       </div>
+   </div> -->
+
+    <div class="phone" id="phone2">
+        <div class="content" id="nokiaScreen">
+            <div id="maxEnergy">
+                <div id="nokiaEnergy">Battery</div>
+            </div>
+            <table>
+                <tr>
+                    <td><button onclick="nokia.showMess();">Message</button></td>
+                    <div class="modal" id="nokiaMessage">
+                        <span class="close" onclick='this.parentElement.style.display = "none"'>&times;</span>
+                        <button onclick="nokia.showSent()">Thư đã gửi</button>
+                        <button onclick="nokia.writeScript()">Soạn tin nhắn</button>
+                        <div class="modal" id="nokiaScript">
+                            <span class="close" onclick='this.parentElement.style.display = "none"'>&times;</span>
+                            <p>Tin nhắn nháp <br><br> To : Iphone <br>
+                            </p>
+                            <textarea id='nokiaInput' style="height: 300px"></textarea>
+                            <button onclick="nokia.sendMess();">Gửi thư</button>
+                        </div>
+                        <p>Message from Iphone :</p>
+                        <p id='nokiaMess'></p>
+                    </div>
+                    <td><button onclick="nokia.turnOnOff()">Turn on/off</button></td>
+                    <td><button onclick="nokia.charge()">Charge energy</button></td>
+                    <td><button onclick="nokia.checkStatus()">Status</button></td>
+                    <div class="modal" id="nokiaNofi">
+                        <span class="close" onclick='this.parentElement.style.display = "none"'>&times;</span>
+                        <h2 id='nokiaNofication'></h2>
+                    </div>
+            </table>
+            </tr>
+        </div>
+    </div>
+    <script src="main1.js"></script>
+</body>
+</html>

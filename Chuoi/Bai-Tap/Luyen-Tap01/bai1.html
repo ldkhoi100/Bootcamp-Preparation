@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bai 1 | [*Bài tập] Luyện tập sử dụng biểu thức chính quy</title>
+</head>
+
+<body>
+    <input type="text" id="day">
+    <input type="button" value="Test" id="test"> <br>
+    <br>
+    <div id="result"></div>
+</body>
+<script>
+    function isday(str) {
+        regexp = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+        if (regexp.test(str)) {
+            return true;
+        }
+        return false;
+    }
+    let zipcode;
+    let day = document.getElementById("day");
+    let result = document.getElementById("result");
+    document.getElementById("test").onclick = function() {
+        zipcode = day.value;
+        result.innerHTML = isday(zipcode) ? "day Hợp lệ <br>" : "day không hợp lệ <br>";
+    }
+</script>
+</html>

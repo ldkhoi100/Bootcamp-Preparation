@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2><i>Sample Screen</i></h2>
+    <input type="text" id="nhap" placeholder="Nhập giá trị cần thêm vào">
+    <input type="button" value="Add" onclick="add()">
+    <input type="button" value="Display" onclick="display()">
+    <input type="button" value="UnDisplay" onclick="undisplay()">
+    <div id="hienthi"></div>
+    <script>
+        let arr = [];
+    function add(){       
+        let txt = document.getElementById("nhap").value;
+        arr.push(txt);
+        document.getElementById("nhap").value = "";
+    }
+
+    function display(){
+        let show = "";
+        for(i=0;i<arr.length;i++)
+        show = show + "Giá trị thứ " + i + " là " + arr[i] + '<br/>';
+        document.getElementById("hienthi").innerHTML=show + '[' + arr + ']';
+    }
+
+    function undisplay(){
+        let a = "a";
+        document.getElementById("hienthi").innerHTML=;
+    }
+    </script>
+</body>
+</html>

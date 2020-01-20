@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>Mảng gồm 10 phần tử ngẫu nhiên: <span id="array10number"></span></p>
+    <p>Số phần tử lớn hơn hoặc bằng 10 là: <span id="result"></span></p>
+    <script>
+    function creatArray(num){
+        let arr = [];
+        for(i=0;i<num;i++){
+            arr[i] = Math.floor(Math.random() * 21);
+        }
+        return arr;
+    }
+
+    function Boolean(arr){
+        let count = 0;
+        for(i=0;i<arr.length;i++){
+            if(arr[i] >= 10){
+                count++;
+            }
+        }
+        return count;
+    }
+
+    function main(){
+        let array = creatArray(10);
+        document.getElementById("array10number").innerHTML = array;
+        document.getElementById("result").innerHTML = Boolean(array);
+    }
+    main();
+    </script>
+</body>
+</html>

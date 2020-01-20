@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    Nhập số điện (kWh):
+    <input type="number" min="0" placeholder="Số điện (kWh)" id="d" /> <br />
+    <br />
+    <input type="button" value="Tính giá điện" onclick="dof()" />
+    <div id="show"></div>
+    <script>
+      function dof() {
+        let dd = parseInt(document.getElementById("d").value);
+        let gd = 1000;
+        if(dd>0 && dd<=50)
+        {
+            gd = dd * 1000;
+            document.getElementById('show').innerHTML='Giá điện là: ' + gd;
+        }
+        else if(dd>50 && dd<=100)
+        {
+            gd = (50*1000) + ((dd-50)*gd*1.10);
+            document.getElementById('show').innerHTML='Giá điện là: ' + gd;
+        }
+        
+        else if(dd>100 && dd<=200){
+            gd = (50*1000) + ((dd-50)*gd*1.10) + ((dd-100)*gd*1.20);
+            document.getElementById('show').innerHTML='Giá điện là: ' + gd;}
+        
+        else if(dd>200 && dd<=300){
+            gd = (50*1000) + ((dd-50)*gd*1.10) + ((dd-100)*gd*1.20) + ((dd-200)*gd*1.30);
+            document.getElementById('show').innerHTML='Giá điện là: ' + gd;}
+        
+        else if(dd>300){
+            gd = (50*1000) + ((dd-50)*gd*1.10) + ((dd-100)*gd*1.20) + ((dd-200)*gd*1.30) + ((dd-300)*gd*1.40);
+            document.getElementById('show').innerHTML='Giá điện là: ' + gd;}
+        
+        else{
+            document.getElementById('show').innerHTML='Nhập sai';}
+      }
+    </script>
+  </body>
+</html>

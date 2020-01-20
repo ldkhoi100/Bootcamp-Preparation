@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    Nhập mét:
+    <input type="number" placeholder="nhập mét" id="m" /> <br />
+    <br />
+    <input type="button" value="Chuyển sang feet" onclick="feet()" />
+    <div id="show"></div>
+    <script>
+      function feet() {
+        let m = +document.getElementById("m").value;
+        let f;
+        if(m>0){
+        let f = m * 3.2808;
+        document.getElementById("show").innerHTML =
+          m + " mét = " + f.toFixed(4) + " feet";
+      }
+        else
+        document.getElementById("show").innerHTML = 'Nhập sai';
+      }
+    </script>
+  </body>
+</html>

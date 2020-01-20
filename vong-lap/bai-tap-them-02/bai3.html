@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //góc vuông ở dưới trái
+      for (let i = 1; i <= 5; i++) {
+        for (let j = 1; j <= i; j++) {
+          document.write("*");
+        }
+        document.write("<br>");
+      }
+      document.write("<br>");
+      //góc vuông ở trên trái
+      for (let i = 1; i <= 5; i++) {
+        for (let j = 5; j >= i; j--) {
+          document.write("*");
+        }
+        document.write("<br>");
+      }
+      document.write("<br>");
+      //góc vuông ở dưới phải
+      for (let i = 1; i <= 5; i++) {
+        for (let j = 1; j <= 5; j++) {
+          if (j > 5 - i) {
+            document.write("*");
+          } else {
+            document.write("&nbsp&nbsp");
+          }
+        }
+        document.write("<br>");
+      }
+      document.write("<br>");
+      //góc vuông ở trên phải
+      for (let i = 1; i <= 5; i++) {
+        for (let j = 5; j >= 1; j--) {
+          if (j > 6 - i) {
+            document.write("&nbsp&nbsp");
+          } else {
+            document.write("*");
+          }
+        }
+        document.write("<br>");
+      }
+    </script>
+  </body>
+</html>

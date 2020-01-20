@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function minnumber(arr){
+        if(arr.length == 0){
+            return -1;
+        }
+        let min = arr[0];
+        for(i=1;i<arr.length;i++){
+            if(min > arr[i]){
+                min = arr[i];
+            }
+        }
+        return min;
+    }
+
+    let arr1 = [3, 5, 1, 8, -3, 7, 8];
+    let min1 = minnumber(arr1);
+    document.write(min1 + '<br/>');
+
+    let arr2 = [7, 12, 6, 9, 20, 56, 89];
+    let min2 = minnumber(arr2);
+    document.write(min2 + '<br/>');
+
+    let arr3 = [];
+    let min3 = minnumber(arr3);
+    document.write(min3 + '<br/>');
+
+    let arr4 = [0, 0, 0, 0, 0, 0];
+    let min4 = minnumber(arr4);
+    document.write(min4 + '<br/>');
+
+    </script>
+</body>
+</html>

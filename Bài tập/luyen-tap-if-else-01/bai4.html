@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = +prompt('Nhập số thứ nhất');
+        let b = +prompt('Nhập số thứ hai');
+        let c = +prompt('Nhập số thứ ba');
+
+        if(a<b){
+            if(b>c) {
+                alert('số lớn nhất là: ' + b );
+            }
+            else {
+                alert('số lớn nhất là: ' + c );
+            }
+        }
+        else if(b>c){
+                if(b>a){
+                alert('số lớn nhất là: ' + b );
+                }
+                else {
+                alert('số lớn nhất là: ' + a );
+                }
+        }
+        else{
+            if(a>c){
+                alert('số lớn nhất là: ' + a );
+            }
+            else
+                alert('số lớn nhất là: ' + c );
+        }
+    </script>
+</body>
+</html>

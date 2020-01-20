@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>Enter the number to guess: <input type="number" id="enternumber"></p>
+    <p><input type="button" value="Check" onclick="check()"></p>
+    <p>Dự đoán: <div id="show"></div></p>
+    <script>
+        let num = Math.floor(Math.random() * 101);
+        function check(){
+            let number = document.getElementById("enternumber").value;
+            if(number == num){
+                document.getElementById("show").innerHTML = "Right";
+            }
+            if(number < num){
+                document.getElementById("show").innerHTML = "too low";
+            }
+            if(number > num){
+                document.getElementById("show").innerHTML = "Too high";
+            }
+        }
+    </script>
+</body>
+</html>

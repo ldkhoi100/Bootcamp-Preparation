@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body onload="docfile()">
+    <img id="nobita" src="../1.png" style="position: absolute;left: 10px; top: 10px ;" height="100" width="80"/>
+    <script>
+        function LenPress() {
+            let element = document.getElementById("nobita");
+            element.style.top = parseInt(element.style.top) - 5 + 'px';
+        }
+
+        function XuongPress() {
+            let element = document.getElementById("nobita");
+            element.style.top = parseInt(element.style.top) + 5 + 'px';
+        }
+
+        function TraiPress() {
+
+            let element = document.getElementById("nobita");
+            element.style.left = parseInt(element.style.left) - 5 + 'px';
+           
+        }
+
+        function PhaiPress() {
+            let element = document.getElementById("nobita");
+            element.style.left = parseInt(element.style.left) + 5 + 'px';
+        }
+
+        function Dichuyen(evt) 
+        {
+            switch(evt.keyCode) 
+            {
+                case 37: 
+                    TraiPress();
+                    break;
+                case 39: 
+                    PhaiPress();
+                    break;
+                case 38: 
+                    LenPress();
+                    break;
+                case 40: 
+                    XuongPress();
+                    break;
+            }
+        }
+
+        function docfile()
+        {
+            window.addEventListener('keydown',Dichuyen);
+        }
+    </script>
+</body>
+</html>

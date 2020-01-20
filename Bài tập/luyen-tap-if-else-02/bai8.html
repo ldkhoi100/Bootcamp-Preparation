@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>Nhập tuổi:</pre>
+    <input type="number" placeholder="tuổi" id="a" /> <br /><br />
+
+    <pre><input type="button" value="Kiểm tra" onclick="feet()" /></pre>
+    <div id="show"></div>
+    <script>
+      function feet() {
+        let a = parseInt(document.getElementById("a").value);
+        if (a>0 && a<120)
+        {
+            document.getElementById('show').innerHTML= a + ' là tuổi của một người';
+        }
+        else
+        document.getElementById('show').innerHTML= a + ' không là tuổi của một người';
+      }
+    </script>
+  </body>
+</html>

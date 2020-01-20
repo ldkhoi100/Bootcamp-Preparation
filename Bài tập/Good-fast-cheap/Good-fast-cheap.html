@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" type="text/css" href="btgtc.css"> -->
+    <!-- <style>
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 70px;
+            height: 34px;
+            margin: 5px;
+        }
+        
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .20s;
+            transition: .20s;
+        }
+        
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 30px;
+            width: 30px;
+            left: 0px;
+            bottom: 2px;
+            background-color: rgb(192, 38, 38);
+            -webkit-transition: .20s;
+            transition: .20s;
+        }
+        
+        input:checked+.slider {
+            background-color: #219443;
+        }
+        
+        input:focus+.slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+        
+        input:checked+.slider:before {
+            -webkit-transform: translateX(1500px);
+            -ms-transform: translateX(1500px);
+            transform: translateX(1500px);
+        }
+        /* Rounded sliders */
+        
+        .slider.round {
+            border-radius: 100px;
+        }
+        
+        .slider.round:before {
+            border-radius: 100%;
+        }
+        
+        div {
+            position: relative;
+            left: 100px;
+            top: -35px;
+            bottom: 7px;
+        }
+    </style> -->
+</head>
+
+<body style="text-align: center ; top: 100px ;">
+
+    <label class="switch">
+        <input type="checkbox" id="fast" onclick="isRun(1)" >
+        <span class="slider round" ></span>
+        <div><h2>Fast</h2></div>
+    </label>
+    <br>
+    <label class="switch">
+        <input type="checkbox" id="cheap" onclick="isRun(2)">
+        <span class="slider round"></span>
+        <div><h2>Cheap</h2></div>
+    </label><br>
+    <label class="switch">
+        <input type="checkbox" id="good" onclick="isRun(3)"> 
+        <span class="slider round"></span>
+        <div><h2>Good</h2></div>
+    </label><br>
+    <div>
+        <h2>Ứng dụng good-fast-cheap</h2>
+    </div>
+    <!-- <input type="checkbox" id="fast" onclick="isRun(1)"> Fast<br>
+    <input type="checkbox" id="cheap" onclick="isRun(2)"> Cheap <br>
+    <input type="checkbox" id="good" onclick="isRun(3)"> Good<br> -->
+</body>
+
+<script>
+    function isRun(ad) {
+        let fast = document.getElementById("fast").checked;
+        let cheap = document.getElementById("cheap").checked;
+        let good = document.getElementById("good").checked;
+        switch (ad) {
+            case 1:
+                if (fast == true && cheap == true) {
+                    document.getElementById("good").checked = false;
+                } else if (fast == ture && good == false)
+                    document.getElementById("cheap").checked = ture;
+                break;
+            case 2:
+                if (cheap == true && good == true)
+                    document.getElementById("fast").checked = false;
+                break;
+            case 3:
+                if (good == true && fast == true)
+                    document.getElementById("cheap").checked = false;
+                break;
+        }
+        // function isCheap() {
+        //     let fast = document.getElementById("fast").checked;
+        //     let cheap = document.getElementById("cheap").checked;
+        //     let good = document.getElementById("good").checked;
+        //     if (cheap == true)
+        //         if (good == true)
+        //             document.getElementById("fast").checked = false
+        // }
+        // function isGood() {
+        //     let fast = document.getElementById("fast").checked;
+        //     let cheap = document.getElementById("cheap").checked;
+        //     let good = document.getElementById("good").checked;
+        //     if (good == true)
+        //         if (fast == true)
+        //             document.getElementById("cheap").checked = false
+    }
+</script>
+</body>
+
+</html>

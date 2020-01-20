@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let arr = [19,17,16,13,8,25,10,25,28,6];
+    let max = arr[0];
+    let sum = 0;
+    let tb;
+    for(i=1;i<arr.length;i++){
+        if(max<arr[i]){
+            max = arr[i];
+        }
+    }
+    document.write("Giá trị lớn nhất là: " + max + "<br/>");
+
+    for(j=0;j<arr.length;j++){
+        sum = sum + arr[j];
+    }
+    tb = sum/arr.length;
+    document.write("Giá trị trung bình của mảng: " + tb);
+    </script>
+</body>
+</html>

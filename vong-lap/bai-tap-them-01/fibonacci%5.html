@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = 0;
+      let b = 1;
+      let temp;
+      let i=0;
+      while(temp%5!=0)
+      {
+          temp = a;
+          a = a + b;
+          b = temp;
+          i++;
+            
+        document.write('Số chia hết cho 5 là: ' + temp + '<br>');
+            
+      }
+    </script>
+  </body>
+</html>

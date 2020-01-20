@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    table, tr, td{
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+    <td>Năm Sinh:</td><td><input type="number" id="year"></td>
+    </tr>
+    <tr>
+    <td>Tháng Sinh:</td><td><input type="number" id="month"></td>
+    </tr>
+    <tr>
+    <td>Ngày Sinh:</td><td><input type="number" id="day"></td>
+    </tr>
+    <tr>
+    <td>Giờ Sinh:</td><td><input type="number" id="hour"></td>
+    </tr>
+    <tr>
+    <td>Phút Sinh:</td><td><input type="number" id="minute"></td>
+    </tr>
+    <tr>
+    <td>Giây Sinh:</td><td><input type="number" id="second"></td>
+    </tr>
+    <tr>
+    <td colspan="2"><input type="button" onclick="check()" value="Check Value"></td>
+    </tr>
+
+    <tr><td>I lived <td  id="nam"></td><td> Years</td></tr>
+    <tr><td>I lived <td  id="thang"></td><td> Months</td></tr>
+    <tr><td>I lived <td  id="ngay"></td><td> Days</td></tr>
+    <tr><td>I lived <td  id="gio"></td><td> Hours</td></tr>
+    <tr><td>I lived <td  id="phut"></td><td> Minutes</td></tr>
+    <tr><td>I lived <td  id="giay"></td><td> Seconds</td></tr>
+</table>
+    <script>
+    function check(){
+        let yearBorn = document.getElementById("year").value;
+        let monthBorn = document.getElementById("month").value;
+        let dayBorn = document.getElementById("day").value;
+        let hourBorn = document.getElementById("hour").value;
+        let minuteBorn = document.getElementById("minute").value;
+        let secondBorn = document.getElementById("second").value;
+
+        let date = new Date();
+        let year = date.getFullYear() - yearBorn;
+        let month = date.getMonth() - monthBorn;
+        let day = date.getDate() - dayBorn;
+        let hour = date.getHours() - hourBorn;
+        let minute = date.getMinutes() - minuteBorn;
+        let second = date.getSeconds() - secondBorn;
+
+        document.getElementById("nam").innerHTML = year;
+        document.getElementById("thang").innerHTML = year*12 + month;
+        document.getElementById("ngay").innerHTML = (year*12 + month)*365 + day;
+        document.getElementById("gio").innerHTML = ((year*12 + month)*365 + day)*24 + hour;
+        document.getElementById("phut").innerHTML = (((year*12 + month)*365 + day)*24 + hour)*60 + minute;
+        document.getElementById("giay").innerHTML = ((((year*12 + month)*365 + day)*24 + hour)*60 + minute)*60 + second;
+    }
+    </script>
+</body>
+</html>

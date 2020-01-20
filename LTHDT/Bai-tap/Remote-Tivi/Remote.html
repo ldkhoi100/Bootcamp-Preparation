@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    table, tr, td{
+        border: 1px solid black;
+        text-align: center;
+        border-collapse: collapse;
+        width: 40%;
+    }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Name Tivi</td>
+            <td id="nameTV"></td>
+        </tr>
+        <tr>
+            <td>Channel</td>
+            <td id="channelTV"></td>
+        </tr>
+        <tr>
+            <td>Volume</td>
+            <td id="volumeTV"></td>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td id="statusTV"></td>
+        </tr>
+    </table>
+    <br><br>
+
+    <table>
+        <tr>
+            <td>Name Remote</td>
+            <td id="nameRM"></td>
+        </tr>
+        <tr>
+            <td>Remote Channel</td>
+            <td>
+                <input type="button" value="0" onclick="remote.remoteChannel(0)">
+                <input type="button" value="1" onclick="remote.remoteChannel(1)">
+                <input type="button" value="2" onclick="remote.remoteChannel(2)">
+                <input type="button" value="3" onclick="remote.remoteChannel(3)">
+                <input type="button" value="4" onclick="remote.remoteChannel(4)">
+                <input type="button" value="5" onclick="remote.remoteChannel(5)">
+                <input type="button" value="6" onclick="remote.remoteChannel(6)">
+                <input type="button" value="7" onclick="remote.remoteChannel(7)">
+                <input type="button" value="8" onclick="remote.remoteChannel(8)">
+                <input type="button" value="9" onclick="remote.remoteChannel(9)">
+            </td>
+        </tr>
+        <tr>
+            <td>Remote Volume</td>
+            <td>
+                <input type="button" value="+" onclick="VolumeUp()">
+                <input type="button" value="-" onclick="VolumeDown()">
+            </td>
+        </tr>
+        <tr>
+            <td>On Off TV</td>
+            <td>
+                <input type="button" value="On or Off" onclick="remote.OnOffTV()">
+            </td>
+        </tr>
+    </table>
+
+    <script>
+    function TV(name, channel, volumn, statusTV){
+        this.name = name;
+        this.channel = channel;
+        this.volumn = volumn;
+        this.statusTV = statusTV;
+
+        this.channels = ["channel 01","channel 02","channel 03", "channel 04",
+                    "channel 05","channel 06","channel 07", "channel 08"];
+        this.changeChannels = function(num){
+            for(i=0; i<this.channels.length; i++){
+                if(num == i){
+                    this.channel = this.channels[num];
+                }
+            }
+        }
+        this.changeVolumn = function(num){
+            if(num>=0 && num<=100){
+                this.num = num;
+            }
+        }
+        this.status = function(){
+            if(this.statusTV){
+                return "On";
+            }
+            else{
+                return "Off";
+            }
+        }
+    }
+
+    function Remote(name, code){
+        this.name = name;
+        this.code = code;
+
+        this.connect = function(TV){
+            this.TV = TV;
+        }
+        this.OnOffTV = function(){
+            if(this.TV.status){
+                this.TV.statusTV = false;
+                alert("TV OFF");
+            }
+            else{
+                this.TV.statusTV = true;
+                alert("TV ON");
+            }
+            show();
+        }
+        this.remoteChannel = function(code){
+            this.TV.changeChannels
+        }
+    }
+    </script>
+</body>
+</html>

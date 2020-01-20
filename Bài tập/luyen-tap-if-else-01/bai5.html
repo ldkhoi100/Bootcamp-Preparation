@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let kt = +prompt('nhập điểm kiểm tra');
+        let gk = +prompt('nhập điểm giữa kỳ');
+        let ck = +prompt('nhập điểm thi cuối kỳ');
+
+        let dtb = ((ck*3)+(gk*2)+kt)/6;
+        switch(dtb>8?alert(dtb+' giỏi'):
+        dtb>6?alert(dtb + ' khá'):
+        dtb>5?alert(dtb + ' trung bình'):
+        alert(dtb + ' học lại')) {}
+    </script>
+</body>
+</html>

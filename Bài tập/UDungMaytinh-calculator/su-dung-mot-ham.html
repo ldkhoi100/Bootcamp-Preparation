@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2 style="color: crimson;">Caculator</h2> <br>
+
+    <form>
+        Số a: <input type="text" id="txt1">
+        <br><br>
+        Số b: <input type="text" id="txt2">
+        <br><br> 
+    </form>
+
+    <button type="button" value="+" onclick="a1(this.value)">Phép +</button>
+    <button type="button" value="-" onclick="a1(this.value)">Phép -</button>
+    <button type="button" value="x" onclick="a1(this.value)">Phép x</button>
+    <button type="button" value="/" onclick="a1(this.value)">Phép /</button>
+    <div id="show"></div>   
+    <script>
+            function a1(math){
+                let num1 = +document.getElementById("txt1").value;
+                let num2 = +document.getElementById("txt2").value;
+
+                if (math == "+"){
+                    let kq1 = num1 + num2;
+                    document.getElementById("show").innerHTML = kq1;
+                }
+
+                if (math == "-"){
+                    let kq2 = num1 - num2;
+                    document.getElementById("show").innerHTML = kq2;
+                }
+
+                if (math == "x"){
+                    let kq3 = num1 * num2;
+                    document.getElementById("show").innerHTML = kq3;
+                }
+
+                if (math == "/"){
+                    let kq4 = num1 / num2;
+                    document.getElementById("show").innerHTML = kq4;
+                }
+
+            }
+    </script>
+</body>
+</html>

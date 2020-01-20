@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img
+      src="../1.png"
+      id="image"
+      style="position: relative;left: 0px;"
+      height="30"
+      width="40"
+    />
+    <p>Click ở dưới để chạy sang phải</p>
+    <input type="button" value="Sang phải" onclick="SangPhai()" />
+
+    <script>
+      function init() {
+        imgObj = document.getElementById("image");
+        imgObj.style.position = "relative";
+        imgObj.style.left = "0px";
+      }
+      function SangPhai() {        
+        imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+      }
+
+      window.onload = init;
+    </script>
+  </body>
+</html>

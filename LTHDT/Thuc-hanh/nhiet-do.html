@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+</head>
+<body>
+  <input id="nhietdo" type="number" placeholder="Nhập nhiệt độ" />
+
+  <script>
+    function Temperature(temp) {
+      this.temp = temp;
+
+      this.getDoC = function(){
+        return this.temp;
+      }
+
+      this.doF = function() {
+        return temp * 1.8 + 32;
+      };
+
+      this.doK = function() {
+        return temp + 273.15;
+      };
+
+      this.toString = function(){
+        alert(`${this.doF} và ${this.doK}`);
+        break;
+      }
+    };
+
+    function main() {
+      do {
+        nhap = parseFloat(prompt("Nhập số muốn chuyển đổi"));
+      } while (isNaN(nhap) || nhap == " " || nhap < -273);
+      let chuyendoi = new Temperature(nhap);
+      chuyendoi.getDoC();
+      chuyendoi.doF();
+      chuyendoi.doK();
+      alert(chuyendoi.doF() + " độ F và " + chuyendoi.doK() + " độ K");
+    }
+    main();
+  </script>
+</body>
+</html>

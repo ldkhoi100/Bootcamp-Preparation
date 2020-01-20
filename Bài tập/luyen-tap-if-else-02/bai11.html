@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>Nhập số tiền thu nhập hàng tháng:</p>
+    Tham khảo thuế:
+    <a href="https://luatvietnam.vn/thue-phi/huong-dan-tinh-thue-thu-nhap-ca-nhan-tu-tien-luong-565-23087-article.html" style="color: red;"><b>Tại đây</b></a>
+    <p><input type="number" min="0" id="tien" placeholder="Nhập số tiền thu nhập"></p>
+    <p><input type="button" onclick="tinhthue()" value="Tính thuế"></p>
+    <div id="show"></div>
+    <br>
+    <img src="../thue.JPG" alt="Ảnh có vấn đề" style="height: 600; width: 600px;">
+
+    <script>
+        function tinhthue()
+        {
+            let tien = parseInt(document.getElementById('tien').value);
+            let thue;
+            if(tien>0 && tien<=5000000)
+            {
+                thue = tien*0.05;
+                document.getElementById('show').innerHTML='Tiền thuế phải nộp: ' + thue + ' VNĐ';
+            }
+            else if(tien>5000000 && tien<=10000000)
+            {
+                thue = tien*0.10;
+                document.getElementById('show').innerHTML='Tiền thuế phải nộp: ' + thue + ' VNĐ';
+            }
+            else if(tien>10000000)
+            {
+                thue = tien*0.15;
+                document.getElementById('show').innerHTML='Tiền thuế phải nộp: ' + thue + 'VNĐ';
+            }
+            else
+                document.getElementById('show').innerHTML='Nhập sai';
+        }
+    </script>
+</body>
+</html>

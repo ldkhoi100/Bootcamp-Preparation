@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function kytuso(num){
+        if(!isNaN(num)){
+            return true;
+        }
+        else
+            return false;
+    }
+
+    function input(){
+        do{
+        number = prompt("Nhập ký tự bất kỳ");
+        }while(number == '')
+        return number;
+    }
+
+    function main(){
+        let int = input();
+        let result = kytuso(int);
+        document.write(result);
+    }
+    main();
+    </script>
+</body>
+</html>

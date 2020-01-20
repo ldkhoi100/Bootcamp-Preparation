@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p><h2>Từ điển Anh-Việt</h2></p>
+    <p> ['hello','goodbye','stupid','smart','worms'];</p>
+    <p> ['xin chào','tạm biệt','ngu','thông minh','giun']; </p>
+    
+    <input type="text" placeholder="Nhập từ cần tìm" id="search">
+    <input type="button" value="Tìm kiếm" onclick="timkiem()">
+    <div id="td"></div>
+    <script>
+    let anh = ['hello','goodbye','stupid','smart','worms'];
+    let viet = ['xin chào','tạm biệt','ngu','thông minh','giun'];
+
+    function timkiem(){
+        let txtsearch = document.getElementById('search').value;
+        let isExist = anh.indexOf(txtsearch);
+        if(isExist != -1) {
+            document.getElementById('td').innerHTML = viet[isExist];
+        }else{
+            document.getElementById('td').innerHTML = 'Khong ton tai';
+        }
+    }
+    </script>
+</body>
+</html>

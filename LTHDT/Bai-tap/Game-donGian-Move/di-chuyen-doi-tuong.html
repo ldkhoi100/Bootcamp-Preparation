@@ -1,0 +1,84 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    </head>
+    <body>
+    <div id="game"></div>
+    
+    <script>
+    function Hero(image, top, left, size) {
+        this.image = image;
+        this.top = top;
+        this.left = left;
+        this.size = size;
+        this.getHeroElement = function () {
+        return `<img width=${this.size} height=${this.size} src=${this.image} style="top:${this.top}px; left:${this.left}px; position:absolute;" />`
+        }
+        this.moveRight = function () {
+        this.left += 10;
+        }
+        this.moveLeft = function () {
+        this.left -= 10;
+        }
+        this.moveDown = function () {
+        this.top += 10;
+        }
+        this.moveUp = function () {
+        this.top -= 10;
+        }
+    }
+    let hero = new Hero('boi.jpg', 20, 30, 200);
+    let width = window.innerWidth - hero.size;
+    let height= window.innerHeight - hero.size;
+
+    function start() {
+        if (hero.left < width) {
+        hero.moveRight();
+        document.getElementById('game').innerHTML = hero.getHeroElement();
+        requestAnimationFrame(start)
+        }
+        else {
+        Down();
+        }
+        }
+
+    function back() {
+        if (hero.left > 0) {
+        hero.moveLeft();
+        document.getElementById('game').innerHTML = hero.getHeroElement();
+        requestAnimationFrame(back)
+        }
+        else {
+        Up();
+        }
+        }
+
+    function Down() {
+        if (hero.top < height) {
+        hero.moveDown();
+        document.getElementById('game').innerHTML = hero.getHeroElement();
+        requestAnimationFrame(Down)
+        }
+        else {
+        back();
+        }
+    }
+
+    function Up() {
+        if (hero.top > 0) {
+        hero.moveUp();
+        document.getElementById('game').innerHTML = hero.getHeroElement();
+        requestAnimationFrame(Up);
+        }
+        else {
+        start();
+        }
+    }
+    start();
+    </script>
+    </body>
+    </html>

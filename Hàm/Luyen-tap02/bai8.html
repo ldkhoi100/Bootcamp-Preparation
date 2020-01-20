@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function daonguoc(arr){
+    arr = prompt("Cần nhập bao nhiêu phần tử?");
+    let arrr = [];    
+    for (let i=0; i<arr;i++){
+        arrr[i] = prompt("Nhập số của phần tử thứ " + i + ":");
+    }
+    arrr.reverse();
+    document.write("Đảo ngược lại là: " + arrr);
+    }
+
+    
+    daonguoc();
+    </script>
+</body>
+</html>

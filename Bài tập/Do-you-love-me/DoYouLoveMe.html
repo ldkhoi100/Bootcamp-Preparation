@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="position: relative; top: 100px; left: 0px;">MÀY CÓ BỊ NGÁO KHÔNG?</h1>
+    <input type="button" onclick="yesclick()" value="Có" style="position: relative;top: 120px; left: 120px;">
+    <input type="button" id="no" onmouseover="noclick()" value="Không" style="position: relative; top: 120px; left: 140px;">
+
+    <script>
+        function yesclick()
+        {
+            alert("Không sai");
+        }
+
+        function noclick()
+        {
+            let a = document.getElementById("no");
+            let x = Math.round(Math.random() * innerWidth);
+            let y = Math.round(Math.random() * innerHeight);
+            a.style.top = y + 'px';
+            a.style.left = x + 'px';
+        }
+    </script>
+</body>
+</html>

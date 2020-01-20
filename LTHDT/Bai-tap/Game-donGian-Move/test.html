@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title><img src="" style="position: absolute;" alt="">
+</head>
+<body>
+    <div id="picture"></div>
+    <script>
+    function move(image, top, left, size){
+        this.image = image;
+        this.top = top;
+        this.left = left;
+        this.size = size;
+
+        this.getimage = function(){
+            return `<img width=${this.size} height=${this.size} src=${this.image} style="top:${this.top}px; left:${this.left}px; position:absolute;" />`
+            //return `<img width=${this.size} height=${this.height} src=${this.image} style = "top: ${this.top}; left:${this.left}; position: absolute;">`
+        }
+        this.moveRight = function(){
+            this.left += 10;
+        }
+        this.moveLeft = function(){
+            this.left -= 10;
+        }
+        this.moveDown = function(){
+            this.top += 10;
+        }
+        this.moveUp = function(){
+            this.top -= 10;
+        }
+    }
+    let img = new move("boi.jpg",20,20,200);
+    let width = window.innerWidth - img.size;
+    let height = window.innerHeight - img.size;
+
+    function right(){
+        if(img.left < width){
+            img.moveRight();
+            document.getElementById("picture").innerHTML = img.getimage();
+            requestAnimationFrame(right);
+        }
+        else{
+            leftt();
+        }
+    }
+
+    function leftt(){
+        if(img.left > 0){
+            img.moveLeft();
+            document.getElementById("picture").innerHTML = img.getimage();
+            requestAnimationFrame(leftt);
+        }
+        else{
+            right();
+        }
+    }
+
+    function down(){
+        if(img.top < height){
+            img.moveDown();
+            document.getElementById("picture").innerHTML = img.getimage();
+            requestAnimationFrame(down);
+        }
+        else{
+            up();
+        }
+    }
+
+    function up(){
+        if(img.top > 0){
+            img.moveUp();
+            document.getElementById("picture").innerHTML = img.getimage();
+            requestAnimationFrame(up);
+        }
+        else{
+            down();
+        }
+    }
+
+    right();
+    down();
+    </script>
+</body>
+</html>

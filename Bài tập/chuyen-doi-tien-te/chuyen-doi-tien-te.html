@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <pre>Amount:              From Currency To Currency</pre>
+    <input style="background-color: darkgrey; height: 50px;" type="text" id="txtAmount">
+
+    <select style="background-color: cadetblue; height: 50px;;" id="from">
+    <option value="vn">VietNam</option>
+    <option value="usd">USD</option>
+    </select>
+
+    <select style="background-color: coral; height: 50px;" id="to">
+    <option value="usd">USD</option>
+    <option value="vn">VietNam</option>
+    </select>
+
+    <button style="background-color: blueviolet; height: 50px;" type="button" onclick="acb()">Convert</button> <br><br>
+    <div id="demo">
+
+    <script>
+       function acb(){
+        var a  = document.getElementById('from').value;
+        var b  = document.getElementById('to').value;
+        var c  = parseInt(document.getElementById('txtAmount').value);
+        if ( a=="vn" && b =='usd'){
+            var ketqua = c  / 23000;
+        //document.write(ketqua + " USD");
+        document.getElementById("demo").innerHTML="Result: " + ketqua + " USD";
+        }
+
+        if ( a == "vn" && b == "vn"){
+        alert("2 đơn vị chuyển đổi trùng nhau");
+        }
+
+        if ( a == "usd" && b == "vn"){
+            var kq = c * 23000;
+        //document.write(kq + " VNĐ");
+        document.getElementById("demo").innerHTML="Result: " + kq + " VNĐ";
+       }
+        
+        if ( a == "usd" && b == "usd"){
+        alert("2 đơn vị chuyển đổi trùng nhau");
+        }
+       }
+    </script>
+</body>
+</html>

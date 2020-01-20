@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function validateEmail(email) {
+        var re = /^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$/;
+        if(re.test(email)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    let a = 'ldkhoi100@gmail.com';
+    console.log(validateEmail(a));
+    let b = 'ldkhoi100mail.com';
+    console.log(validateEmail(b));
+    </script>
+</body>
+</html>

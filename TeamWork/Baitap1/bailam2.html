@@ -1,0 +1,98 @@
+<html>
+<head>
+<script src="matrix.js"></script>
+</head>
+    <style>
+    body{
+        font-family: sans-serif;
+    }
+    table{
+    width:100%; 
+    border: 1px solid black; 
+    border-collapse:collapse;
+    }
+    tr, td{
+        border: 1px solid black; 
+        border-collapse:collapse;
+        padding: 10px;
+    }
+    </style>
+<body>
+<table>
+    <tr>
+        <td style="width: 30%; vertical-align: top;">
+            <table>
+                <tr>
+                    <td>Row Number</td>
+                    <td>
+                        <input type="text" id="rowNum" value="10" />
+                        <div id="spRowMessage"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Column Number</td>
+                    <td>
+                        <input type="text" id="colNum" value="10" />
+                        <div id="spColMessage"></div>
+                    </td>
+                </tr>
+                <tr>
+                        <td>Input Row to calculate the total </td>
+                        <td>
+                            <input type="text" id="rowInput" value="10" />
+                            <div id="spTotalRow"></div>
+                        </td>
+                    </tr>
+                <tr>
+                    <td rowdiv="2">
+                        <input type="button" value="Create Matrix" onclick="Main();">
+                    </td>
+                </tr>
+            </table>
+        </td>
+        
+        <td style="width: 70%;">
+            <table>
+                <tr>
+                    <td>
+                        Matrix created
+                        <table id="tbMatrix1"></table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Claim Values
+                        <table id="tbMatrix3">
+                            <tr>
+                                <td style="width: 20%;">Total the row inputed:</td>
+                                <td id="totalRowNumber"></td>
+                            </tr>
+                            <tr>
+                                <td>Total Multiple Of 5</td>
+                                <td id="TotalMultipleOf5"></td>
+                            </tr>
+                            <tr>
+                                <td>Total of 4 Border Matrix:</td>
+                                <td id="totalBorderMatrix"></td>
+                            </tr>
+                            <tr>
+                                <td>Greatest value:</td>
+                                <td id="GreatestValue"></td>
+                            </tr>
+                            <tr>
+                                <td>Max Value Position:</td>
+                                <td id="MaxValuePosition"></td>
+                            </tr>
+                            <tr>
+                                <td>Total Of Maxvalue Row:</td>
+                                <td id="TotalOfMaxvalueRow"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

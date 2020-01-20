@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    Nhập cạnh hình vuông:
+    <input type="number" placeholder="Cạnh hình vuông" id="m" /> <br />
+    <br />
+    <input type="button" value="Tính diện tích hình vuông" onclick="feet()" />
+    <div id="show"></div>
+    <script>
+      function feet() {
+        let m = +document.getElementById("m").value;
+        let f = m**2;
+        document.getElementById("show").innerHTML =
+        "Diện tích hình vuông là: " + f;
+      }
+    </script>
+  </body>
+</html>

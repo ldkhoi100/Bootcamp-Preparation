@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<p><h2>Chuyển từ feet sang meter</h2></p>
+<p>Feet <input type="number" id="feet" oninput="feet(this.value)" placeholder="Nhập feet">
+    = <span id="showmeter"></span> meter</p>
+<p><h2>Chuyển từ meter sang feet</h2></p>
+<p>Meters <input type="number" id="meter" oninput="meter(this.value)" placeholder="Nhập meter">
+    = <span id="showfeet"></span> feet</p>
+    <script>
+    function feet(number1){
+        number1 = parseInt(number1);
+        document.getElementById("showmeter").innerHTML = number1 * 3.279;
+    }
+
+    function meter(number2){
+        number2 = parseInt(number2);
+        document.getElementById("showfeet").innerHTML = number2 * 0.305;
+    }
+    </script>
+</body>
+</html>

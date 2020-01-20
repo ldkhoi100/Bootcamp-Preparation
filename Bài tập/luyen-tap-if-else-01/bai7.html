@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    Nhập số giây:
+    <input type="number" min="1" max="20000" value="helo" id="s" /> <br /><br />
+
+    Nội mạng hay ngoại mạng:
+    <select id="nng">
+      <option value="noi">Nội mạng</option>
+      <option value="ngoai">Ngoại mạng</option>
+    </select>
+
+    <br /><br />
+
+    <input type="button" value="Tính số tiền" onclick="tinhtien()" />
+    <div id="show"></div>
+
+    <script>
+      function tinhtien() {
+        let giay = +document.getElementById("s").value;
+        let nng = document.getElementById("nng").value;
+        let tien;
+
+        if (nng == "noi") {
+          if (giay <= 6 && giay >= 0) {
+            tien = giay * 80;
+            document.getElementById("show").innerHTML =
+              Math.round(tien) + "VNĐ";
+          } else if (giay > 6) {
+            tien = 6 * 80;
+            tien = tien + (giay - 6) * 13.33;
+            document.getElementById("show").innerHTML =
+              Math.round(tien) + "VNĐ";
+          } else document.getElementById("show").innerHTML = alert("Nhập sai");
+        }
+        if (nng == "ngoai") {
+          if (giay <= 6 && giay >= 0) {
+            tien = giay * 89.09;
+            document.getElementById("show").innerHTML =
+              Math.round(tien) + "VNĐ";
+          } else if (giay > 6) {
+            tien = 6 * 89.09;
+            tien = tien + (giay - 6) * 14.85;
+            document.getElementById("show").innerHTML =
+              Math.round(tien) + "VNĐ";
+          } else document.getElementById("show").innerHTML = alert("Nhập sai");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<script>
+function Human(name, gender, weight){
+    this.name = name;
+    this.gender = gender;
+    this.weight = weight;
+    this.mess = "";
+
+    this.getName = function(){
+    return this.name;
+    }
+    this.getGender = function(){
+    return this.gender;
+    }
+    this.getWeight = function(){
+    return this.weight;
+    }
+
+    this.eatApple = function(apple){
+    this.weight ++;
+    console.log(apple);
+    apple.decrease();
+    show();
+    }
+
+    this.say = function(){
+    this.mess += this.name + " say: " + document.getElementById("txt"+this.name).value + "<br>";
+    document.getElementById("box"+this.name).innerHTML = this.mess;
+    }
+};
+
+function Apple(weight){
+    this.weight = weight;
+    this.getWeight = function(){
+    return this.weight;
+    }
+    this.decrease = function(){
+    if(this.weight > 0){
+        this.weight--;
+    }
+    else{
+        alert("Het tao roi nhoa");
+    }
+    }
+};
+
+let adam = new Human("Adam", "Male", 60);
+let eva = new Human("Eva", "Female", 40);
+let apple = new Apple(20);
+
+function show(){
+    document.getElementById("adamName").innerHTML = adam.getName();
+    document.getElementById("genderAdam").innerHTML = adam.getGender();
+    document.getElementById("weightAdam").innerHTML = adam.getWeight();
+
+    document.getElementById("evaName").innerHTML = eva.getName();
+    document.getElementById("genderEva").innerHTML = eva.getGender();
+    document.getElementById("weightEva").innerHTML = eva.getWeight();
+
+    document.getElementById("weightApple").innerHTML = apple.getWeight();
+}
+</script>
+</head>
+<body onload="show()">
+<style>
+    table,th,td {
+    border: 1px solid black;
+    width: 400px;
+    }  
+</style>
+<h2>Adam & Eva:</h2>
+<table>
+    <tr>
+    <th>Name</th>
+    <th id="adamName"></th>
+    <th id="evaName"></th>
+    </tr>
+    <tr>
+    <th>Gender</th>
+    <td id="genderAdam"></td>
+    <td id="genderEva"></td>
+    </tr>
+    <tr>
+    <th>Weight</th>
+    <td id="weightAdam"></td>
+    <td id="weightEva"></td>
+    </tr>
+    <tr>
+    <th>Say</th>
+    <td><input type="text" id="txtAdam"></td>
+    <td><input type="text" id="txtEva"></td>
+    </tr>
+    <tr>
+    <th>Option</th>
+    <th><input type="button" onclick="adam.say()" value="Say"><input type="button" onclick="adam.eatApple(apple)" value="Eat"></th>
+    <th><input type="button" onclick="eva.say()" value="Say"><input type="button" onclick="eva.eatApple(apple)" value="Eat"></th>
+    </tr>
+    <tr>
+    <th>Mess</th>
+    <td>
+        <p id="boxAdam"></p>
+    </td>
+    <td>
+        <p id="boxEva"></p>
+    </td>
+    </tr>
+</table>
+<br>
+<table>
+    <tr>
+    <th colspan="2">Apple</th>
+    </tr>
+    <tr>
+    <td>Weight</td>
+    <td><p id="weightApple"></p></td>
+    </tr>
+</table>
+<br>
+</body>
+</html>

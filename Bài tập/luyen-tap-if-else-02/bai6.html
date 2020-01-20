@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>Nhập a:</pre>
+    <input type="number" placeholder="số a" id="a" /> <br /><br />
+    <pre>Nhập b:</pre>
+    <input type="number" placeholder="số b" id="b" /> <br />
+
+    <br />
+    <pre><input type="button" value="Giải phương trình" onclick="feet()" /></pre>
+    <div id="show"></div>
+    <script>
+      function feet() {
+        let a = +document.getElementById("a").value;
+        let b = +document.getElementById("b").value;
+        let c = -b/a;
+        document.getElementById("show").innerHTML =
+          "Giá trị x: " + c.toFixed(3);
+      }
+    </script>
+  </body>
+</html>

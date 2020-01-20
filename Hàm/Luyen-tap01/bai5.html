@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function string(str) {
+        let star1 = [
+          "polaris",
+          "aldebaran",
+          "deneb",
+          "vega",
+          "altair",
+          "dubhe",
+          "regulus"
+        ]; // 7
+        let star2 = [
+          "Ursa Minor",
+          "Tarurus",
+          "Cygnus",
+          "Lyra",
+          "Aquila",
+          "Ursa Major",
+          "Leo"
+        ]; // 7
+        let isExist = star1.indexOf(str);
+        if (isExist != -1) {
+          document.write("Chòm sao đó là: " + star2[isExist]);
+        }
+        else
+            document.write("Không tồn tại");
+      }
+    </script>
+    <script>
+    let find = prompt("Nhập tên ngôi sao cần tìm: ");
+      let b = string(find.toLowerCase());
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Độ F:
+      <input type="number" id="doF" oninput="doC(this.value)" placeholder="Nhập độ F"></p>
+      <p> Độ C <span id="show"></span></p>
+
+     <script>
+     function doC(number){
+       this.number = parseFloat(number);
+       
+       document.getElementById("show").innerHTML = (this.number-32)/1.8;
+     }
+     </script>
+  </body>
+</html>

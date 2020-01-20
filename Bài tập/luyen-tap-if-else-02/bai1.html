@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    Nhập độ C:
+    <input type="number" placeholder="Nhập độ C" id="C" /> <br />
+    <br />
+    <input type="button" value="Chuyển sang độ F" onclick="dof()" />
+    <div id="show"></div>
+    <script>
+      function dof() {
+        let c = +document.getElementById("C").value;
+        let f = (c * 9) / 5;
+        document.getElementById("show").innerHTML =
+          c + " Độ C = " + f.toFixed(2) + " Độ F";
+      }
+    </script>
+  </body>
+</html>

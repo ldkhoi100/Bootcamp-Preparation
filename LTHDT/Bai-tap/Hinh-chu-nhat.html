@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Hình chữ nhật</title>
+  </head>
+  <body>
+    <canvas
+      id="myCanvas"
+      width="400"
+      height="400"
+      style="border:1px solid red;"
+    ></canvas>
+    <script>
+      let Hinhchunhat = function(cd, cr) {
+        this.cd = cd;
+        this.cr = cr;
+
+        this.getcd = function() {
+          return this.cd;
+        };
+
+        this.getcr = function() {
+          return this.cr;
+        };
+
+        this.dientich = function() {
+          return cd * cr;
+        };
+
+        this.chuvi = function() {
+          return (cd + cr) * 2;
+        };
+      };
+
+      function main(){
+      let num1 = parseFloat(prompt("Nhập chiều dài"));
+      let num2 = parseFloat(prompt("Nhập chiều rộng"));
+      let hinhchunhat = new Hinhchunhat(num1, num2);
+      let cd = hinhchunhat.getcd();
+      let cr = hinhchunhat.getcr();
+      let dt = hinhchunhat.dientich();
+      let cv = hinhchunhat.chuvi();
+
+      document.write(`<br> Diện tích: ${dt}, chu vi: ${cv}`);
+
+      var c = document.getElementById("myCanvas");
+      var ctx = c.getContext("2d");
+      ctx.fillStyle = "blue";
+      ctx.fillRect(0, 0, cd, cr);
+      ctx.fillText(`Diện tích: ${dt}, chu vi: ${cv}`,50,50);
+      ctx.fill();
+      }
+      main();
+    </script>
+  </body>
+</html>

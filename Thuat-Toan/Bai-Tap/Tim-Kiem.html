@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>Nhập số điện thoại cần kiểm tra: <input type="number" id="phone"></p>
+    <p><input type="button" value="Check" onclick="check()"></p>
+    <div id="show"></div>
+    <script>
+    function checkNumberViettel(num){
+        regexp = /((086|096|097|098|032|033|034|035|036|037|038|039)([0-9]{7,7})\b)/g;
+        if(regexp.test(num)){
+            return "Đó là số viettel";
+        }
+        else
+            return "Không phải là số Viettel";
+    }
+    let num = document.getElementById("phone");
+    function check(){
+        let numb = num.value;
+        document.getElementById("show").innerHTML = checkNumberViettel(numb);
+    }
+    </script>
+</body>
+</html>

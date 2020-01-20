@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    table, tr, td{
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px;
+    }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Số ngẫu nhiên từ 0-10</td><td id="random0-10"></td>
+    </tr>
+    <tr>
+        <td>Số ngẫu nhiên từ 0-400</td><td id="random0-400"></td>
+    </tr>
+    <tr>
+        <td>Số ngẫu nhiên từ 50-100</td><td id="random50-100"></td>
+    </tr>
+    <tr>
+        <td>Giá trị nhỏ nhất tring các số 5,7,2,9</td><td id="minOf4"></td>
+    </tr>
+    <tr>
+        <td>Tìm luỹ thừa 53</td><td id="exponential53"></td>
+    </tr>
+    <tr>
+        <td>Tính diện tích của hình tròn có bán kính là 5cm</td><td id="circleArea"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="Kiểm tra" onclick="check()"></td>
+    </tr>
+</table>
+    <script>
+        function check(){
+            document.getElementById("random0-10").innerHTML = Math.floor(Math.random() * 11);
+            document.getElementById("random0-400").innerHTML = Math.floor(Math.random() * 401);
+            document.getElementById("random50-100").innerHTML = Math.floor(Math.random() * 51 + 50);
+            document.getElementById("minOf4").innerHTML = Math.min(5,7,2,9);
+            document.getElementById("exponential53").innerHTML = Math.pow(53,2);
+            document.getElementById("circleArea").innerHTML = Math.round(Math.PI * Math.pow(5,2));
+        }
+    </script>
+</body>
+</html>

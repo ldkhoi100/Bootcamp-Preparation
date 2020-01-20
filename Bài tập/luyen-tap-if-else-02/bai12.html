@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>Nhập số tiền ban đầu:</pre>
+    <input type="number" placeholder="số tiền" id="money" /> <br />
+    <pre>Nhập số tháng cho vay:</pre>
+    <input type="number" min="1" max="12" placeholder="số tháng" id="month" /> <br />
+    <pre>Lãi suất mỗi tháng:</pre>
+    <input type="number" placeholder="% lãi suất" id="lai" /> <br />
+
+    <br />
+    <pre><input type="button" value="kiểm tra" onclick="feet()" /></pre>
+    <div id="show"></div>
+    <script>
+      function feet() {
+        let money = +document.getElementById("money").value;
+        let month = +document.getElementById("month").value;
+        let laisuat = +document.getElementById("lai").value;
+        let laithang = money*laisuat/100;
+        let tienlai = money*laisuat/100*month;
+        document.getElementById('show').innerHTML='Mỗi tháng lãi được ' + laithang + ' VNĐ, và tổng lãi suất của ' + month + ' tháng là ' + tienlai + ' VNĐ';
+      }
+    </script>
+  </body>
+</html>

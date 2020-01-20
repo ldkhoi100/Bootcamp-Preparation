@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="pic_bulboff.gif" id="show"><br>
+    <button type="button" onclick="checklight()">Kick</button>
+    <script>
+        function ElectricLamp(status) {
+            this.status = status;
+            
+            this.turnOff = function() {
+                this.status = false;
+            };
+            this.turnOn = function() {
+                this.status = true;
+            };
+        }
+        function SwitchButton(status, lamp) {
+            this.status = status;
+            this.lamp = lamp;
+            
+            this.connectToLamp = function() {
+                console.log("Connected to lamp!");
+            };
+            this.switchOff = function() {
+                this.status = false;
+                this.lamp.turnOff();
+            };
+            this.switchOn = function() {
+                this.status = true;
+                this.lamp.turnOn();
+            };
+        }
+
+        let electricLamp = new ElectricLamp(false);
+        let switchButton = new SwitchButton(false, electricLamp);
+        let dem = 0;
+
+        function checklight() {
+            if (electricLamp.status === false) {
+                switchButton.switchOn();
+
+                dem++;
+                console.log(" Bat lan: " + dem);
+                document.getElementById("show").src = "pic_bulbon.gif";
+                switchButton.connectToLamp();
+            } 
+            else{
+                switchButton.switchOff();
+                console.log("Tat lan: " + dem);
+                document.getElementById("show").src = "pic_bulboff.gif";
+            }
+        }
+    </script>
+</body>
+</html>

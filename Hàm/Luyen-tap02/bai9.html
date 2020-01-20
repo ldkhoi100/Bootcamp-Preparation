@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function solan(string, finder) {
+        let a = 0;
+        let position = string.indexOf(finder);
+        if (position != -1) {
+          for (i = 0; i < string.length; i++) {
+            if(finder == string[i])
+            a++;
+          }
+          return `Số ký tự ${finder} trong chuỗi ${string} là ${a}`;
+        } else return -1;
+      }
+
+      let mang = prompt("Nhập chuỗi");
+      let find = prompt("Tìm ký tự cần tìm");
+      document.write(solan(mang, find));
+    </script>
+  </body>
+</html>

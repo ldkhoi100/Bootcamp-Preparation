@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>Enter a value to search for: <input type="number" id="enternumber"></p>
+    <p><input type="button" value="Check" onclick="check()"></p>
+    <p>Have: <div id="show"></div></p>
+    <script>
+        function creatArr(arr){
+            for(let i=0;i<100;i++){
+                arr[i] = Math.floor(Math.random() * 101);
+                if(i%10 == 0){
+                    arr[i] = "<br>";
+                }
+            }
+            return arr.join(" ");
+        }
+
+        function checkNumber(arr, number){
+            let count = 0;
+            for(i=0; i<arr.length;i++){
+                if(arr[i] == number){
+                    count++;
+                }
+            }
+            return count;
+        }
+        let array = [];
+        document.write("Show matrix 1 way:" + "<br>" + creatArr(array));
+
+        function check(){
+            let num = document.getElementById("enternumber").value;
+            let value = checkNumber(array, num);
+            document.getElementById("show").innerHTML = value;
+        }
+    </script>
+</body>
+</html>

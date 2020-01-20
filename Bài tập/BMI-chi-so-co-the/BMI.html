@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let weight = parseFloat(prompt('Nhập cân nặng: '));
+    let height = parseFloat(prompt('Nhập chiều cao: '));
+    let bmi = weight / (height*height);
+    switch ((bmi<18.5)?alert('Underweight'):
+    (bmi>=18.5&&bmi<25)?alert('Normal'):
+    (bmi>=25&&bmi<30)?alert('Overweight'):
+    alert('Obese'))  {} 
+</script>
+</body>
+</html>
